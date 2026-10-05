@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.game-container {
+    position: relative;
+    border: 4px solid #1f293d;
+    box-shadow: 0 0 30px rgba(0, 243, 255, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+}
+
+/* UI Header */
+.ui-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.player-hud {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 40%;
+}
+
+.player-hud.right {
+    align-items: flex-end;
+}
+
+.player-name {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #00f3ff;
+}
+
+.health-outer {
+    width: 100%;
+    height: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.health-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0055, #ffcc00);
+    transition: width 0.1s ease-in-out;
+}
+
+.timer {
+    font-size: 32px;
+    font-weight: 900;
+    background: #111827;
+    border: 2px solid #00f3ff;
+    padding: 5px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+/* Canvas Arena */
+canvas {
+    display: block;
+    background: linear-gradient(180deg, #111827 0%, #1f293d 100%);
+}
+
+/* Game Over Overlay */
+#game-over-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+#game-over-screen.hidden {
+    display: none;
+}
+
+#winner-text {
+    font-size: 48px;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+    letter-spacing: 3px;
+}
+
+#restart-btn {
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #00f3ff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+}
+
+#restart-btn:hover {
+    background: #fff;
+    transform: scale(1.05);
+}
+
+.controls-info {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+}
