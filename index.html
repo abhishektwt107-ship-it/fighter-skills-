@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate 2D Fighter - GitHub Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- UI Header: Health Bars & Timer -->
+        <div class="ui-header">
+            <!-- Player 1 HP -->
+            <div class="player-hud">
+                <span class="player-name">PLAYER 1</span>
+                <div class="health-outer">
+                    <div id="p1-health" class="health-inner"></div>
+                </div>
+            </div>
+
+            <!-- Timer -->
+            <div id="timer" class="timer">60</div>
+
+            <!-- Player 2 HP -->
+            <div class="player-hud right">
+                <span class="player-name">PLAYER 2</span>
+                <div class="health-outer">
+                    <div id="p2-health" class="health-inner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Canvas / Arena -->
+        <canvas id="gameCanvas" width="1024" height="576"></canvas>
+
+        <!-- Game Over / Victory Overlay -->
+        <div id="game-over-screen" class="hidden">
+            <h1 id="winner-text">PLAYER 1 WINS!</h1>
+            <button id="restart-btn" onclick="resetGame()">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <!-- Controls Info Footer -->
+    <div class="controls-info">
+        <p><b>P1 Controls:</b> A/D = Move | W = Jump | Space = Attack</p>
+        <p><b>P2 Controls:</b> Left/Right Arrows = Move | Up Arrow = Jump | Enter = Attack</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
